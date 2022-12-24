@@ -1,10 +1,10 @@
 public class Car {
-    private String brand;
-    private String model;
-    private String color;
-    private String country;
-    private int year;
-    private double engineVolume;
+    String brand;
+    String model;
+    String color;
+    String country;
+    int year;
+    double engineVolume;
     Car(String model,String brand,int year,String country,String color,double engineVolume){
 
 
