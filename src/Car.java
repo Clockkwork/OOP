@@ -17,16 +17,15 @@ public class Car {
         this.engineVolume = engineVolume;
 
 
-
-        if (model.equals(null) || model.equals(" ")){
-            this.model = model;
-        } else if (brand.equals(null) || brand.equals(" ")) {
-            this.brand = brand;
-        } else if (country.equals(null) || country.equals(" ")) {
-            this.country = country;
+        if (model == null|| model.equals(" ")){
+            this.model = "default";
+        } else if (brand == null || brand.equals(" ")) {
+            this.brand = "default";
+        } else if (country == null || country.equals(" ")) {
+            this.country = "default";
         }else if (engineVolume <= 0) {
             this.engineVolume = 1.5;
-        } else if (color.equals(null) || color.equals(" ")) {
+        } else if (color == null || color.equals(" ")) {
             this.color = "White";
         } else if (year <= 0){
             this.year = 2000;
