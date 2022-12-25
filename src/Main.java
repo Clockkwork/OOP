@@ -1,57 +1,48 @@
-import javax.imageio.plugins.bmp.BMPImageWriteParam;
+import transport.Car;
+
+import java.time.LocalDate;
 
 public class Main {
     public static void main(String[] args) {
+        Car lada = new Car("Lada", "Granta", "Жёлтый", "России", 2015, 1.7,
+                "Механическая","Лифтбэк","А579АС",4,"Зимняя резина");
 
 
-        Car first = new Car(null,"Lada",2015,"Russia","Yellow",1.7);
-        first.model = "Granta";
-        first.brand = "Lada";
-        first.year = 2015;
-        first.country = "России";
-        first.color = "Жёлтого";
-        first.engineVolume = 1.7;
-        System.out.println(first);
+        Car audi = new Car("Audi", "A8 50 L TDI quattro", "чёрный", "Германии", 2020,
+                3.0,"Автоматическая","Седан","A336АА",4,"Летняя резина ");
 
 
-        Car second = new Car("A8 " + "50 L" + " TDI quattro ","AUDI",2020,"Germany","black",3);
-        second.model = "A8 " + "50 L" + " TDI quattro";
-        second.brand = "Audi";
-        second.year = 2020;
-        second.country = "Германии";
-        second.color = "кузов" + " чёрного";
-        second.engineVolume = 3.0;
-        System.out.println(second);
+        Car bmw = new Car("BMW", "Z8", "чёрный", "Германии", 2021, 3.0,
+                "Автоматическая","Купе","B228АА",2,"Летняя резина");
 
 
-        Car third = new Car("Z8", "BMW",2021,"Germany","Black",3);
-        third.model = "Z8";
-        third.brand = "BMW";
-        third.year = 2021;
-        third.country = "Германии";
-        third.color = "кузов" + " чёрного";
-        third.engineVolume = 3.0;
-        System.out.println(third);
+        Car kia = new Car("Kia", "Sportage 4-го поколения", "красный", "Южной Корeи", 2018,
+                2.3,"Автоматическая","Кроссовер","K333ИА",5,"зимняя");
 
 
-        Car fourth = new Car("Sportage 4-ого поколения","Kia",2018,"South Korea","red",2.4);
-        fourth.model = "Sportage 4-ого поколения";
-        fourth.brand = "Kia";
-        fourth.year = 2018;
-        fourth.country = "Южной Корее";
-        fourth.color = "кузов" + " красного";
-        fourth.engineVolume = 2.4;
-        System.out.println(fourth);
+        Car hyundai = new Car("Hyundai", null, "", "", -323, 0,
+                null,"",null,-2,"");
 
 
-        Car fifth = new Car("Avante","Hyundai",2016,"South Korea","Orange",1.6);
-        fifth.model = "Avante";
-        fifth.brand = "Hyundai";
-        fifth.year = 2016;
-        fifth.country = "Южной Корее";
-        fifth.color = "кузов" + " оранжевого";
-        fifth.engineVolume = 1.6;
-        System.out.println(fifth);
+        System.out.println(lada);
 
-    }
+        lada.changeTiresType(7);
+
+        System.out.println("На автомобиле марки: " + lada.getBrand() + lada.getModel() + " установленна " + lada.getTiresType());
+
+        Car.Key keyOptions1= new Car.Key(true, false);
+        lada.setKey(keyOptions1);
+        System.out.println(lada.getKey().isKeylessAccess());
+
+        Car.Insurance insurance1 = new Car.Insurance(LocalDate.of(2021,12,15),10000,"12345678");
+        lada.setInsurance(insurance1);
+        lada.getInsurance().checkNumber();
+        lada.getInsurance().checkExpirationDate();
+
+
+        System.out.println(audi);
+        System.out.println(bmw);
+        System.out.println(kia);
+        System.out.println(hyundai);
+}
 }
