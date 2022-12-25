@@ -16,6 +16,8 @@ public class Car {
         this.color = color;
         this.engineVolume = engineVolume;
 
+
+
         if (model.equals(null) || model.equals(" ")){
             this.model = model;
         } else if (brand.equals(null) || brand.equals(" ")) {

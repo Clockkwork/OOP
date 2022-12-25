@@ -7,7 +7,6 @@ public class Main {
         Car first = new Car(" ","Lada",2015,"Russia","Yellow",1.7);
         System.out.println(first);
 
-
         Car second = new Car("A8 " + "50 L" + " TDI quattro ","AUDI",2020,"Germany","black",3);
         System.out.println(second);
 
