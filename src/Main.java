@@ -1,26 +1,48 @@
-import javax.imageio.plugins.bmp.BMPImageWriteParam;
+import transport.Car;
+
+import java.time.LocalDate;
 
 public class Main {
     public static void main(String[] args) {
+        Car lada = new Car("Lada", "Granta", "Жёлтый", "России", 2015, 1.7,
+                "Механическая","Лифтбэк","А579АС",4,"Зимняя резина");
 
 
-        Car first = new Car(null,"Lada",2015,"России","жёлтого",1.7);
-        System.out.println(first);
-
-        Car second = new Car(null , "AUDI" ,2020,"Германии","чёрного",3);
-        System.out.println(second);
+        Car audi = new Car("Audi", "A8 50 L TDI quattro", "чёрный", "Германии", 2020,
+                3.0,"Автоматическая","Седан","A336АА",4,"Летняя резина ");
 
 
-        Car third = new Car(null, "BMW",2021,"Германии","чёрного",3);
-        System.out.println(third);
+        Car bmw = new Car("BMW", "Z8", "чёрный", "Германии", 2021, 3.0,
+                "Автоматическая","Купе","B228АА",2,"Летняя резина");
 
 
-        Car fourth = new Car("Sportage 4-ого поколения","Kia",2018,"Южной Кореии","красного",2.4);
-        System.out.println(fourth);
+        Car kia = new Car("Kia", "Sportage 4-го поколения", "красный", "Южной Корeи", 2018,
+                2.3,"Автоматическая","Кроссовер","K333ИА",5,"зимняя");
 
 
-        Car fifth = new Car("Avante","Hyundai",2016,"Южной Кореии","оранжевого",1.6);
-        System.out.println(fifth);
+        Car hyundai = new Car("Hyundai", null, "", "", -323, 0,
+                null,"",null,-2,"");
 
-    }
+
+        System.out.println(lada);
+
+        lada.changeTiresType(7);
+
+        System.out.println("На автомобиле марки: " + lada.getBrand() + lada.getModel() + " установленна " + lada.getTiresType());
+
+        Car.Key keyOptions1= new Car.Key(true, false);
+        lada.setKey(keyOptions1);
+        System.out.println(lada.getKey().isKeylessAccess());
+
+        Car.Insurance insurance1 = new Car.Insurance(LocalDate.of(2021,12,15),10000,"12345678");
+        lada.setInsurance(insurance1);
+        lada.getInsurance().checkNumber();
+        lada.getInsurance().checkExpirationDate();
+
+
+        System.out.println(audi);
+        System.out.println(bmw);
+        System.out.println(kia);
+        System.out.println(hyundai);
+}
 }
